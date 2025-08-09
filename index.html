@@ -23,7 +23,7 @@
   <!-- Question Screen -->
   <div id="question-container" class="hidden bg-gray-50 border border-gray-300 rounded-lg p-8 w-full max-w-xl text-center">
     <h2 id="question" class="text-lg font-semibold mb-6"></h2>
-    <ul id="options-container" class="space-y-3"></ul>
+    <ul id="options-container" class="space-y-3 border-4 border-black-700"></ul>
     <div class="flex justify-center gap-3 mt-6">
       <button id="back-button" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800">Back</button>
       <button id="next-button" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800" disabled>Next</button>
@@ -38,11 +38,11 @@
   </div>
 
   <script>
-    // Creates a Tailwind-styled option button with border
+    // Creates a Tailwind-styled option button with 3px black border
     function createOptionButton(text) {
       const btn = document.createElement('button');
       btn.textContent = text;
-      btn.className = "option border-2 border-black text-black px-4 py-2 rounded-md w-full max-w-sm mx-auto hover:bg-black hover:text-white transition";
+      btn.className = "option border-[3px] border-black text-black px-4 py-2 rounded-md w-full max-w-sm mx-auto hover:bg-black hover:text-white transition";
       return btn;
     }
   </script>
