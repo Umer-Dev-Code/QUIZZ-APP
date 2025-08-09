@@ -2,36 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Quiz App</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App - SMIT UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div id="welcome-container">
-    <h1>Welcome to the Quiz App</h1>
-    <h22>Select a Quiz</h2>
-    <p>Choose the topic you want to test:</p>
-    <div class="category-buttons">
-      <button class="category" data-category="html">HTML</button>
-      <button class="category" data-category="css">CSS</button>
-      <button class="category" data-category="js">JavaScript</button>
+<body class="bg-white text-black min-h-screen flex items-center justify-center p-4">
+
+  <!-- Welcome Screen -->
+  <div id="welcome-container" class="bg-gray-50 border border-gray-300 rounded-lg p-8 w-full max-w-lg text-center">
+    <h1 class="text-3xl font-bold mb-4">Welcome to the Quiz App</h1>
+    <h2 class="text-xl font-semibold mb-2">Select a Quiz</h2>
+    <p class="text-gray-600 mb-6">Choose the topic you want to test:</p>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button class="category bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800" data-category="html">HTML</button>
+      <button class="category bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800" data-category="css">CSS</button>
+      <button class="category bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800" data-category="js">JavaScript</button>
     </div>
   </div>
 
-  <div id="question-container" style="display: none;">
-    <h2 id="question"></h2>
-    <ul id="options-container"></ul>
-    <div class="buttons">
-      <button id="back-button">Back</button>
-      <button id="next-button">Next</button>
+  <!-- Question Screen -->
+  <div id="question-container" class="hidden bg-gray-50 border border-gray-300 rounded-lg p-8 w-full max-w-xl text-center">
+    <h2 id="question" class="text-lg font-semibold mb-6"></h2>
+    <ul id="options-container" class="space-y-3"></ul>
+    <div class="flex justify-center gap-3 mt-6">
+      <button id="back-button" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800">Back</button>
+      <button id="next-button" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800" disabled>Next</button>
     </div>
   </div>
 
-  <div id="result-container" style="display: none;">
-    <h2>Quiz Completed!</h2>
-    <p id="final-score"></p>
-    <button id="restart-button">Back to Categories</button>
+  <!-- Result Screen -->
+  <div id="result-container" class="hidden bg-gray-50 border border-gray-300 rounded-lg p-8 w-full max-w-lg text-center">
+    <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+    <p id="final-score" class="text-lg font-semibold text-gray-700 mb-6"></p>
+    <button id="restart-button" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800">Back to Categories</button>
   </div>
 
+  <script>
+    // Tailwind-compatible option styling
+    function createOptionButton(text) {
+      const btn = document.createElement('button');
+      btn.textContent = text;
+      btn.className = "option border border-black text-black px-4 py-2 rounded-md w-full max-w-sm mx-auto hover:bg-black hover:text-white transition";
+      return btn;
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
